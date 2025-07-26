@@ -10,14 +10,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// rota raiz (health check)
+// rota raiz
 app.get('/', (_req, res) => {
   res.send('🚗 API de consulta de placa funcionando!');
 });
 
-// monta as rotas de placa em /placa
-// e dentro de placa-route.js você deve ter router.get('/:placa', ...)
-app.use('/placa', placaRoute);
+// monta a rota /placa/:placa
+app.use('/', placaRoute);
 
 // middlewares de erro
 app.use(notFoundError);
