@@ -1,13 +1,16 @@
 {
   "name": "consultaplaca-api",
   "version": "1.0.0",
-  "description": "API para consulta de veículo através do SINESP (Sistema Nacional de Informações de Segurança Pública)",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/server.js",
-    "dev": "nodemon ./bin/server.js",
-    "lint": "eslint **/*.js"
+    "start": "node index.js"
   },
+  "dependencies": {
+    "express": "^4.x",
+    "sinesp-api": "^1.x"
+  }
+}
+,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yagoluiz/consultaplaca-api.git"
