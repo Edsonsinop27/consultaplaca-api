@@ -5,12 +5,6 @@
   "scripts": {
     "start": "node index.js"
   },
-  "dependencies": {
-    "express": "^4.x",
-    "sinesp-api": "^1.x"
-  }
-}
-,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yagoluiz/consultaplaca-api.git"
