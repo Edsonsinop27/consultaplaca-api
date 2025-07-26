@@ -1,7 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const { buscarVeiculoPorPlaca } = require('./src/consultar'); // ajuste conforme seu módulo
-const app = express();
+const app = require('./src/app');
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`API de consulta de placa rodando na porta ${port}`);
+});
 
 app.use(bodyParser.json());
 app.use(express.static('public')); // se tiver front
