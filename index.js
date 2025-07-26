@@ -21,12 +21,17 @@ app.get('/placa/:placa', async (req, res) => {
     }
     res.json(dados);
   } catch (err) {
-    console.error('Erro ao buscar placa:', err);
+    console.error('Erro ao buscar placa:', err.stack || err);
     res
       .status(500)
-      .json({ error: 'Não foi possível consultar a placa agora. Tente novamente em alguns minutos.' });
+      .json({
+        error: 'Erro interno ao consultar placa',
+        message: err.message,
+        stack: err.stack  // retire este campo depois que resolver tudo
+      });
   }
 });
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
