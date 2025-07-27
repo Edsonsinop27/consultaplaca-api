@@ -16,7 +16,7 @@ app.get('/', (_req, res) => {
 
 // rota de placa
 app.get('/placa/:placa', async (req, res) => {
-  const placa = req.params.placa.toUpperCase();
+  const placa = req.params.placa.toUpperCase().replace(/[-\s]/g, '');
   try {
     const dados = await buscarVeiculoPorPlaca(placa);
     if (!dados || !dados.placa) {
